@@ -6,7 +6,7 @@ variable "GOOGLE_CREDENTIALS" {
 }
 
 provider "google" {
-  project = "your-project-id"
+  project = "terraform-445119"
   region  = "us-central1"
   zone    = "us-central1-a"
   credentials = var.GOOGLE_CREDENTIALS
