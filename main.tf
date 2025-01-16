@@ -1,6 +1,15 @@
+# Declare GOOGLE_CREDENTIALS as a variable
+variable "GOOGLE_CREDENTIALS" {
+  type        = string
+  description = "The JSON credentials for the Google Cloud provider."
+  sensitive   = true
+}
+
 provider "google" {
   project = "your-project-id"
   region  = "us-central1"
+  zone    = "us-central1-a"
+  credentials = var.GOOGLE_CREDENTIALS
 }
 
 resource "google_compute_instance" "sftp_server" {
